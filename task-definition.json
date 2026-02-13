@@ -1,14 +1,14 @@
 {
   "containerDefinitions": [
     {
-      "name": "chap02-container",
-      "image": "851725437767.dkr.ecr.ap-northeast-2.amazonaws.com/chap02-aws-deploy:latest",
-      "cpu": 256,
+      "name": "chap02-container-seung",
+      "image": "775964394580.dkr.ecr.ap-northeast-2.amazonaws.com/chap02-aws-deploy@sha256:3690c82104b9ec5acf9956acc96252c6c350eddc604d93912361a57ceb8aa1da",
+      "cpu": 512,
       "memory": 307,
       "memoryReservation": 205,
       "portMappings": [
         {
-          "name": "chap02-container-8080-tcp",
+          "name": "chap02-container-seung-8080-tcp",
           "containerPort": 8080,
           "hostPort": 80,
           "protocol": "tcp",
@@ -27,7 +27,7 @@
         },
         {
           "name": "AWS_S3_BUCKET",
-          "value": "menu-images-2024-ohgi"
+          "value": "menu-images-2026-seung"
         },
         {
           "name": "SPRING_PROFILES_ACTIVE",
@@ -35,7 +35,7 @@
         },
         {
           "name": "RDS_ENDPOINT",
-          "value": "menu-management-db.cp2s22sumkcx.ap-northeast-2.rds.amazonaws.com"
+          "value": "menu-management-db.cryu2coimyqy.ap-northeast-2.rds.amazonaws.com"
         },
         {
           "name": "STORAGE_TYPE",
@@ -74,7 +74,7 @@
     }
   ],
   "family": "chap02-task-definition",
-  "executionRoleArn": "arn:aws:iam::851725437767:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::775964394580:role/ecsTaskExecutionRole",
   "networkMode": "bridge",
   "volumes": [],
   "placementConstraints": [],
@@ -84,7 +84,7 @@
   "requiresCompatibilities": [
     "EC2"
   ],
-  "cpu": "256",
+  "cpu": "512",
   "memory": "512",
   "runtimePlatform": {
     "cpuArchitecture": "X86_64",
