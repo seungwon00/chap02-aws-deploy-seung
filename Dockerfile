@@ -24,6 +24,9 @@ RUN ./gradlew bootJar
 ########################################################################################
 FROM eclipse-temurin:17-jre-alpine
 
+# alpine 버전에 curl 설치
+RUN apk add --no-cache curl
+
 # 작업 디렉토리 설정
 WORKDIR /app
 

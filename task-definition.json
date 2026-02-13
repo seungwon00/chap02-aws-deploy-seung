@@ -2,7 +2,7 @@
   "containerDefinitions": [
     {
       "name": "chap02-container-seung",
-      "image": "775964394580.dkr.ecr.ap-northeast-2.amazonaws.com/chap02-aws-deploy@sha256:3690c82104b9ec5acf9956acc96252c6c350eddc604d93912361a57ceb8aa1da",
+      "image": "775964394580.dkr.ecr.ap-northeast-2.amazonaws.com/chap02-aws-deploy:latest",
       "cpu": 512,
       "memory": 307,
       "memoryReservation": 205,
@@ -63,7 +63,7 @@
       "healthCheck": {
         "command": [
           "CMD-SHELL",
-          "wget --no-verbose --tries=1 --spider http://localhost:8080/actuator/health || exit 1"
+          "curl -f http://localhost:8080/actuator/health || exit 1"
         ],
         "interval": 30,
         "timeout": 5,
